@@ -16,11 +16,12 @@ def create_order(tickets: List[dict],
             order.save()
 
         for new_ticket in tickets:
-            Ticket.objects.create(order=order,
-                                  movie_session_id=new_ticket.get("movie_session"),
-                                  row=new_ticket.get("row"),
-                                  seat=new_ticket.get("seat")
-                                  )
+            Ticket.objects.create(
+                order=order,
+                movie_session_id=new_ticket.get("movie_session"),
+                row=new_ticket.get("row"),
+                seat=new_ticket.get("seat")
+            )
 
 
 def get_orders(username: Optional[str] = None) -> Order:

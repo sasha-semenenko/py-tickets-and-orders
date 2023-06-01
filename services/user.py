@@ -11,10 +11,11 @@ def create_user(username: str,
                 first_name: Optional[str] = "",
                 last_name: Optional[str] = "") -> User:
     user = get_user_model().objects.create_user(username=username,
-                                    password=password,
-                                    email=email,
-                                    first_name=first_name,
-                                    last_name=last_name)
+                                                password=password,
+                                                email=email,
+                                                first_name=first_name,
+                                                last_name=last_name
+                                                )
     return user
 
 
